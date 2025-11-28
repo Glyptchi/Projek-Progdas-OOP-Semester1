@@ -1,5 +1,5 @@
-#ifndef KENDARAANMANAGEMENT_H
-#define KENDARAANMANAGEMENT_H
+#ifndef KENDARAAN_H
+#define KENDARAAN_H
 
 #include <iostream>
 #include <vector>
@@ -12,15 +12,17 @@ struct Mobil {
     string nama;
     int hargaPerHari;
     bool tersedia = true;
+    int lamaSewa;
 };
 
 struct Motor {
     string nama;
     int hargaPerHari;
     bool tersedia = true;
+    int lamaSewa;
 };
 
-class KendaraanManagement {
+class Kendaraan {
 public:
     void saveKendaraan(const vector<Mobil>& listMobil, const vector<Motor>& listMotor);
     void loadKendaraan(vector<Mobil>& listMobil, vector<Motor>& listMotor);

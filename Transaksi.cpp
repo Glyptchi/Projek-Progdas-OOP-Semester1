@@ -1,6 +1,6 @@
-#include "Pinjam.h"
+#include "Transaksi.h"
 
-void Pinjam::pinjamKendaraan(vector<Mobil>& listMobil, vector<Motor>& listMotor) {
+void Transaksi::pinjamKendaraan(vector<Mobil>& listMobil, vector<Motor>& listMotor) {
 
         string nama;
         cout << "Masukkan nama kendaraan yang ingin dipinjam: ";
@@ -19,6 +19,7 @@ void Pinjam::pinjamKendaraan(vector<Mobil>& listMobil, vector<Motor>& listMotor)
             cin >> hari;
             cin.ignore();
 
+            m.lamaSewa = hari;
             int total = hari * m.hargaPerHari;
             m.tersedia = false;
 
@@ -48,6 +49,7 @@ void Pinjam::pinjamKendaraan(vector<Mobil>& listMobil, vector<Motor>& listMotor)
             cin >> hari;
             cin.ignore();
 
+            m.lamaSewa = hari;
             int total = hari * m.hargaPerHari;
             m.tersedia = false;
 
@@ -68,12 +70,13 @@ void Pinjam::pinjamKendaraan(vector<Mobil>& listMobil, vector<Motor>& listMotor)
     cout << "Kendaraan tidak ditemukan!\n";
 }
 
-void Pinjam::kembalikanKendaraan(vector<Mobil>& listMobil, vector<Motor>& listMotor) {
+void Transaksi::kembalikanKendaraan(vector<Mobil>& listMobil, vector<Motor>& listMotor) {
 
     string nama;
     cout << "Masukkan nama kendaraan yang ingin dikembalikan: ";
     getline(cin, nama);
 
+    // MOBIL
     for (auto &m : listMobil) {
         if (m.nama == nama) {
 
@@ -82,12 +85,34 @@ void Pinjam::kembalikanKendaraan(vector<Mobil>& listMobil, vector<Motor>& listMo
                 return;
             }
 
+            int hariNyata;
+            cout << "Berapa hari dipakai sebenarnya? ";
+            cin >> hariNyata;
+            cin.ignore();
+
+            int hariPerjanjian = m.lamaSewa;
+            int denda = 0;
+            int harga = hariPerjanjian * m.hargaPerHari;
+
+            if (hariNyata > hariPerjanjian) {
+                denda = (hariNyata - hariPerjanjian) * (m.hargaPerHari * 2);
+            }
+
+            cout << "\n=== PENGEMBALIAN ===\n";
+            cout << "Durasi perjanjian : " << hariPerjanjian << " hari\n";
+            cout << "Pemakaian         : " << hariNyata << " hari\n";
+            cout << "Harga sewa        : Rp" << harga << endl;
+            cout << "Denda             : Rp" << denda << "\n";
+            cout << "Total             : RP" << denda + harga << endl << endl;
+
             m.tersedia = true;
+            m.lamaSewa = 0;   // reset
             cout << "Mobil berhasil dikembalikan! Terima kasih.\n";
             return;
         }
     }
 
+    // MOTOR
     for (auto &m : listMotor) {
         if (m.nama == nama) {
 
@@ -96,7 +121,28 @@ void Pinjam::kembalikanKendaraan(vector<Mobil>& listMobil, vector<Motor>& listMo
                 return;
             }
 
+            int hariNyata;
+            cout << "Berapa hari dipakai sebenarnya? ";
+            cin >> hariNyata;
+            cin.ignore();
+
+            int hariPerjanjian = m.lamaSewa;
+            int harga = hariPerjanjian * m.hargaPerHari;
+            int denda = 0;
+
+            if (hariNyata > hariPerjanjian) {
+                denda = (hariNyata - hariPerjanjian) * (m.hargaPerHari*2);
+            }
+
+            cout << "\n=== PENGEMBALIAN ===\n";
+            cout << "Durasi perjanjian : " << hariPerjanjian << " hari\n";
+            cout << "Pemakaian         : " << hariNyata << " hari\n";
+            cout << "Harga sewa        : Rp" << harga << endl;
+            cout << "Denda             : Rp" << denda << "\n";
+            cout << "Total             : RP" << denda + harga << endl;
+
             m.tersedia = true;
+            m.lamaSewa = 0;   // reset
             cout << "Motor berhasil dikembalikan! Terima kasih.\n";
             return;
         }

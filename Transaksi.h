@@ -1,14 +1,14 @@
-#ifndef PINJAM_H
-#define PINJAM_H
+#ifndef TRANSAKSI_H
+#define TRANSAKSI_H
 
 #include <iostream>
 #include <vector>
 #include <string>
 using namespace std;
 
-#include "KendaraanManagement.h"
+#include "Kendaraan.h"
 
-class Pinjam {
+class Transaksi {
 public:
     void pinjamKendaraan(vector<Mobil>& listMobil, vector<Motor>& listMotor);
     void kembalikanKendaraan(vector<Mobil>& listMobil, vector<Motor>& listMotor);

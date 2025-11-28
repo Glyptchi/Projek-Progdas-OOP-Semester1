@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 #include "UserManagement.h"
-#include "KendaraanManagement.h"
-#include "Pinjam.h"
+#include "Kendaraan.h"
+#include "Transaksi.h"
 #include "Feedback.h"
 
 using namespace std;
@@ -25,8 +25,8 @@ int main(){
     };
 
     UserManagement user;
-    KendaraanManagement kendaraan;
-    Pinjam pinjam;
+    Kendaraan kendaraan;
+    Transaksi pinjam;
     Feedback feedback;
 
     kendaraan.loadKendaraan(listMobil, listMotor);

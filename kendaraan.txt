@@ -1,5 +1,5 @@
 [MOBIL]
-Toyota Avanza;0
+Toyota Avanza;1
 Honda Brio;1
 Daihatsu Xenia;1
 Mitsubishi Xpander;1
@@ -9,4 +9,4 @@ Yamaha NMAX;1
 Honda Vario;1
 Suzuki GSX R150;1
 Yamaha Aerox;1
-Honda PCX;0
+Honda PCX;1

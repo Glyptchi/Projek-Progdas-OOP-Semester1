@@ -1,6 +1,6 @@
-#include "KendaraanManagement.h"
+#include "Kendaraan.h"
 
-void KendaraanManagement::saveKendaraan(const vector<Mobil>& listMobil, const vector<Motor>& listMotor) {
+void Kendaraan::saveKendaraan(const vector<Mobil>& listMobil, const vector<Motor>& listMotor) {
     ofstream file("kendaraan.txt");
 
     file << "[MOBIL]\n";
@@ -14,7 +14,7 @@ void KendaraanManagement::saveKendaraan(const vector<Mobil>& listMobil, const ve
     }
 }
 
-void KendaraanManagement::loadKendaraan(vector<Mobil>& listMobil, vector<Motor>& listMotor) {
+void Kendaraan::loadKendaraan(vector<Mobil>& listMobil, vector<Motor>& listMotor) {
     ifstream file("kendaraan.txt");
     if (!file.good()) return;
 
@@ -58,7 +58,7 @@ void KendaraanManagement::loadKendaraan(vector<Mobil>& listMobil, vector<Motor>&
     }
 }
 
-void KendaraanManagement::tampilMobil(const vector<Mobil>& listMobil) {
+void Kendaraan::tampilMobil(const vector<Mobil>& listMobil) {
     cout << "\n=== Daftar Mobil ===\n";
 
     int wNo = 4;
@@ -85,7 +85,7 @@ void KendaraanManagement::tampilMobil(const vector<Mobil>& listMobil) {
     cout << "+-----+-----------------------+-------------+-----------+\n";
 }
 
-void KendaraanManagement::tampilMotor(const vector<Motor>& listMotor) {
+void Kendaraan::tampilMotor(const vector<Motor>& listMotor) {
     cout << "\n=== Daftar Motor ===\n";
 
     int wNo = 4;
