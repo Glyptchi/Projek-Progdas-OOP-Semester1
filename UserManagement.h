@@ -8,16 +8,11 @@
 
 using namespace std;
 
-struct User {
-    string username;
-    string password;
-};
-
 class UserManagement{
 
     private:
-    vector<User> users;
-    User* currentUser = nullptr;
+    vector<pair<string, string>> users;
+    int currentUser = -1; 
 
     public:
     void saveUsers();
@@ -27,7 +22,8 @@ class UserManagement{
     void editProfil();
     
     string getCurrentUsername() {
-        if (currentUser) return currentUser->username;
+        if (currentUser != -1) 
+            return users[currentUser].first;
         return "";
     }
 };

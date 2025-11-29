@@ -8,7 +8,7 @@ using namespace std;
 
 int main(){
 
-    vector<Mobil> listMobil = {
+    vector<Kendaraan::Mobil> listMobil = {
         {"Toyota Avanza", 350000, true},
         {"Honda Brio", 300000, true},
         {"Daihatsu Xenia", 330000, true},
@@ -16,7 +16,7 @@ int main(){
         {"Suzuki Ertiga", 350000, true},
     };
 
-    vector<Motor> listMotor = {
+    vector<Kendaraan::Motor> listMotor = {
         {"Yamaha NMAX", 120000, true},
         {"Honda Vario", 100000, true},
         {"Suzuki GSX R150", 180000, true},
@@ -67,7 +67,7 @@ int main(){
                 cout << "8. Log out" << endl;
                 cout << "Pilih menu: ";
                 cin >> pilihan;
-                cin.ignore();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n'); // buang sisa newline
 
                 if(pilihan == 1){
                     user.editProfil();

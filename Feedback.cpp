@@ -1,30 +1,20 @@
 #include "Feedback.h"
 
-void Feedback::simpanFeedback(const FeedbackItem &fb) {
-    ofstream file("feedback.txt", ios::app);
-
-    file << "User: " << fb.username << "\n";
-    file << "Komentar: " << fb.komentar << "\n";
-    file << "-----\n";
-
-    file.close();
-}
-
-void Feedback::berikanFeedback(UserManagement &userMgmt) {
-    FeedbackItem fb;
-    
-    // Ambil username dari user yang sedang login
-    fb.username = userMgmt.getCurrentUsername();
-
-    if (fb.username.empty()) {
-        cout << "Anda harus login untuk memberikan feedback!\n";
-        return;
+void Feedback::simpanFeedback(const string &username, const string &komentar) {
+        ofstream file("feedback.txt", ios::app);
+        if (file.is_open()) {
+            file << username << ";" << komentar << "\n";
+            file.close();
+            cout << "Feedback berhasil disimpan!\n";
+        } else {
+            cout << "Gagal membuka file feedback.\n";
+        }
     }
 
-    cout << "\nMasukkan feedback: ";
-    getline(cin, fb.komentar);
-
-    simpanFeedback(fb);
-
-    cout << "Terima kasih atas feedbacknya!\n";
+void Feedback::berikanFeedback(UserManagement &userMgmt) {
+    string username = userMgmt.getCurrentUsername(); 
+    string komentar;
+    cout << "Masukkan feedback: ";
+    getline(cin, komentar);
+    simpanFeedback(username, komentar);
 }

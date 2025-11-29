@@ -1,6 +1,6 @@
 #include "Transaksi.h"
 
-void Transaksi::pinjamKendaraan(vector<Mobil>& listMobil, vector<Motor>& listMotor) {
+void Transaksi::pinjamKendaraan(vector<Kendaraan::Mobil>& listMobil, vector<Kendaraan::Motor>& listMotor) {
 
         string nama;
         cout << "Masukkan nama kendaraan yang ingin dipinjam: ";
@@ -70,7 +70,7 @@ void Transaksi::pinjamKendaraan(vector<Mobil>& listMobil, vector<Motor>& listMot
     cout << "Kendaraan tidak ditemukan!\n";
 }
 
-void Transaksi::kembalikanKendaraan(vector<Mobil>& listMobil, vector<Motor>& listMotor) {
+void Transaksi::kembalikanKendaraan(vector<Kendaraan::Mobil>& listMobil, vector<Kendaraan::Motor>& listMotor) {
 
     string nama;
     cout << "Masukkan nama kendaraan yang ingin dikembalikan: ";

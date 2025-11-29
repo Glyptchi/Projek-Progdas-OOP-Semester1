@@ -10,8 +10,8 @@ using namespace std;
 
 class Transaksi {
 public:
-    void pinjamKendaraan(vector<Mobil>& listMobil, vector<Motor>& listMotor);
-    void kembalikanKendaraan(vector<Mobil>& listMobil, vector<Motor>& listMotor);
+    void pinjamKendaraan(vector<Kendaraan::Mobil>& listMobil, vector<Kendaraan::Motor>& listMotor);
+    void kembalikanKendaraan(vector<Kendaraan::Mobil>& listMobil, vector<Kendaraan::Motor>& listMotor);
 };
 
 #endif
