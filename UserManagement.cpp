@@ -1,7 +1,5 @@
 #include "UserManagement.h"
 
-#include "UserManagement.h"
-
 void UserManagement::saveUsers() {
     ofstream file("users.txt");
     for (auto &u : users) {
