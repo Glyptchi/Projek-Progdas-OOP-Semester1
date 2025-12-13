@@ -27,10 +27,14 @@ void Transaksi::pinjamKendaraan(vector<Kendaraan::Mobil>& listMobil, vector<Kend
             int w2 = 20;
 
             cout << "\n+------------------+-----------------------+\n";
-            cout << "| " << left << setw(w1) << "Kendaraan"   << " | " << left << setw(w2) << m.nama           << " |\n";
-            cout << "| " << left << setw(w1) << "Harga / Hari" << " | " << left << setw(w2) << ("Rp" + to_string(m.hargaPerHari)) << " |\n";
-            cout << "| " << left << setw(w1) << "Durasi"       << " | " << left << setw(w2) << (to_string(hari) + " hari")        << " |\n";
-            cout << "| " << left << setw(w1) << "TOTAL"        << " | " << left << setw(w2) << ("Rp" + to_string(total))          << " |\n";
+            cout << "| " << left << setw(w1) << "Kendaraan"
+                 << " | " << left << setw(w2) << m.nama << " |\n";
+            cout << "| " << left << setw(w1) << "Harga / Hari"
+                 << " | " << left << setw(w2) << ("Rp" + to_string(m.hargaPerHari)) << " |\n";
+            cout << "| " << left << setw(w1) << "Durasi"
+                 << " | " << left << setw(w2) << (to_string(hari) + " hari") << " |\n";
+            cout << "| " << left << setw(w1) << "TOTAL"
+                 << " | " << left << setw(w2) << ("Rp" + to_string(total))          << " |\n";
             cout << "+------------------+-----------------------+\n";
             return;
         }
@@ -57,10 +61,14 @@ void Transaksi::pinjamKendaraan(vector<Kendaraan::Mobil>& listMobil, vector<Kend
             int w2 = 20;
 
             cout << "\n+------------------+----------------------+\n";
-            cout << "| " << left << setw(w1) << "Kendaraan"   << " | " << left << setw(w2) << m.nama           << " |\n";
-            cout << "| " << left << setw(w1) << "Harga / Hari" << " | " << left << setw(w2) << ("Rp" + to_string(m.hargaPerHari)) << " |\n";
-            cout << "| " << left << setw(w1) << "Durasi"       << " | " << left << setw(w2) << (to_string(hari) + " hari")        << " |\n";
-            cout << "| " << left << setw(w1) << "TOTAL"        << " | " << left << setw(w2) << ("Rp" + to_string(total))          << " |\n";
+            cout << "| " << left << setw(w1) << "Kendaraan"
+                 << " | " << left << setw(w2) << m.nama  << " |\n";
+            cout << "| " << left << setw(w1) << "Harga / Hari"
+                 << " | " << left << setw(w2) << ("Rp" + to_string(m.hargaPerHari)) << " |\n";
+            cout << "| " << left << setw(w1) << "Durasi"
+                 << " | " << left << setw(w2) << (to_string(hari) + " hari") << " |\n";
+            cout << "| " << left << setw(w1) << "TOTAL"
+                 << " | " << left << setw(w2) << ("Rp" + to_string(total)) << " |\n";
             cout << "+------------------+----------------------+\n";
 
             return;

@@ -32,9 +32,6 @@ void Kendaraan::loadKendaraan(vector<Mobil>& listMobil, vector<Motor>& listMotor
 
         bool tersedia = stoi(tersediaStr);
 
-        // ===========================
-        //  UPDATE MOBIL
-        // ===========================
         if (modeMobil) {
             for (auto &m : listMobil) {
                 if (m.nama == nama) {
@@ -44,9 +41,6 @@ void Kendaraan::loadKendaraan(vector<Mobil>& listMobil, vector<Motor>& listMotor
             }
         }
 
-        // ===========================
-        //  UPDATE MOTOR
-        // ===========================
         else {
             for (auto &m : listMotor) {
                 if (m.nama == nama) {

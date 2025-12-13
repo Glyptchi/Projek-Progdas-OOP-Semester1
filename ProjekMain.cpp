@@ -52,7 +52,7 @@ int main(){
         if(pilihan == 1){
 
             if (!user.login()) {
-                continue;   // kembali ke menu awal
+                continue;
             };
 
             while(true){
@@ -67,7 +67,7 @@ int main(){
                 cout << "8. Log out" << endl;
                 cout << "Pilih menu: ";
                 cin >> pilihan;
-                cin.ignore(numeric_limits<streamsize>::max(), '\n'); // buang sisa newline
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
                 if(pilihan == 1){
                     user.editProfil();

@@ -23,6 +23,7 @@ class Kendaraan {
         bool tersedia = true;
         int lamaSewa;
     };
+    
     void saveKendaraan(const vector<Mobil>& listMobil, const vector<Motor>& listMotor);
     void loadKendaraan(vector<Mobil>& listMobil, vector<Motor>& listMotor);
     void tampilMobil(const vector<Mobil>& listMobil);
